@@ -1,0 +1,27 @@
+version: "3"
+
+services: 
+    db: 
+      image: postgres
+      container_name: clockdb
+      environment: 
+        POSTGRES_PASSWORD: "clock123"
+        POSTGRES_DB: "clock"
+      expose: 
+        - 5432
+      ports: 
+        - 5435:5432
+
+    api:
+      image: biojj/api-clock
+      container_name: api-clock
+      expose: 
+        - 3333
+      ports: 
+       - 3333:3333
+      depends_on: 
+       - "db"
+
+networks: 
+    default:
+      driver: bridge
