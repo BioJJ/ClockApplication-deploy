@@ -12,6 +12,10 @@ sistema contem um endpoint que receba duas informações como parâmetro, sendo 
 $ docker-compose up -d
 
 
+# endpoint exemplo
+$ http://localhost:3333/api/clocks/9/30
+
+
 ```
 
 
